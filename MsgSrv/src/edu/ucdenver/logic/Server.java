@@ -88,6 +88,8 @@ public class Server {
     public void relayMessage(String userTo, String theMsg, User userFrom){
         //Protocol: M|userFrom|msg  E.g., M|Alice|Hello World
         String msg = String.format("M|%s|%s",userFrom.getName(),theMsg);
+        println(msg);
+
         for (User aUser: users){
             if (aUser.getName().equalsIgnoreCase(userTo)){
                 aUser.sendMessage(msg);

@@ -72,6 +72,7 @@ public class Controller {
         client.connect();
 
         incomingRelay = new IncomeMsg(Integer.parseInt(this.txtIncomingPort.getText()),5,this);
+
         this.executorService.execute(this.incomingRelay);
 
         try {
